@@ -1,0 +1,132 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>9mice — Музыкальный каталог</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/favorites.css">
+</head>
+<body class="artist-page">
+
+<header class="header">
+    <nav class="nav">
+        <ul class="nav-list">
+            <li><a href="../index.html">Главная</a></li>
+            <li><a href="../artists.html" aria-current="page">Исполнители</a></li>
+            <li><a href="../albums.html">Альбомы</a></li>
+            <li><a href="../favorites.html">Избранное</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main class="artist-main">
+    <section class="artist-hero">
+        <img class="artist-hero_img"
+             src="https://i.pinimg.com/736x/85/14/c3/8514c307a777951ffd571ac79f71d1ed.jpg"
+             alt="9mice">
+
+        <div class="artist-hero_info">
+            <p>ИСПОЛНИТЕЛЬ</p>
+            <h1>9mice</h1>
+            <span>Рэп • Трэп • Хип-хоп</span>
+            <button class="favorite-heart artist-profile-favorite"
+                    type="button"
+                    data-favorite-type="artist"
+                    data-favorite-id="9mice"
+                    data-favorite-name="9mice">♡</button>
+        </div>
+    </section>
+
+    <section class="artist-biography">
+        <h2>Биография</h2>
+        <p>
+            9mice (Сергей Дмитриев) — российский рэп-исполнитель,
+            известный экспериментальным подходом к хип-хопу
+            и ярким визуальным стилем.
+        </p>
+        <p>
+            Музыкант получил широкую известность благодаря
+            сотрудничеству с Kai Angel. Вместе они создали
+            проект VIPERR, объединивший элементы трэпа,
+            электронной музыки и альтернативного рэпа.
+        </p>
+        <p>
+            В 2023 году 9mice выпустил сольные проекты
+            ASPHALT и ORPHEUS. В 2024 году вместе с Kai Angel
+            представил альбом HEAVY METAL 2, а в 2025 году
+            вышел сольный проект 9mm.
+        </p>
+    </section>
+
+    <section class="artist-gallery">
+        <h2>Фотографии</h2>
+        <div class="artist-gallery_row">
+            <img src="https://avatars.yandex.net/get-music-content/16508792/fdb71c7d.p.13739916/m1000x1000"
+                 alt="9mice" loading="lazy">
+            <img src="https://avatars.yandex.net/get-music-content/17696724/22edf7c6.p.13739916/m1000x1000"
+                 alt="9mice" loading="lazy">
+            <img src="https://st.rolld.ru/i/thumbnails/9m/9mice.webp"
+                 alt="9mice" loading="lazy">
+        </div>
+    </section>
+
+    <section class="artist-albums">
+        <h2>Альбомы</h2>
+        <div class="artist-albums_row">
+
+            <article class="artist-album-card">
+                <a href="../album.html?id=9mm">
+                    <img src="https://avatars.yandex.net/get-music-content/15134515/7ddf8d50.a.38695104-1/m1000x1000"
+                         alt="9mm" loading="lazy">
+                    <h3>9mm</h3>
+                </a>
+                <p>2025</p>
+            </article>
+
+            <article class="artist-album-card">
+                <a href="../album.html?id=heavy-metal-2">
+                    <img src="https://avatars.yandex.net/get-music-content/14183125/b8b9eecf.a.33207179-1/m1000x1000"
+                         alt="HEAVY METAL 2" loading="lazy">
+                    <h3>HEAVY METAL 2</h3>
+                </a>
+                <p>2024 · совместно с Kai Angel</p>
+            </article>
+
+            <article class="artist-album-card">
+                <a href="../album.html?id=orpheus">
+                    <img src="https://i.ytimg.com/vi/Nv738G8uDEI/maxresdefault.jpg"
+                         alt="ORPHEUS" loading="lazy">
+                    <h3>ORPHEUS</h3>
+                </a>
+                <p>2023</p>
+            </article>
+
+            <article class="artist-album-card">
+                <a href="../album.html?id=asphalt">
+                    <img src="https://avatars.yandex.net/get-music-content/9784575/a7a31a0f.a.25926224-1/m1000x1000"
+                         alt="ASPHALT" loading="lazy">
+                    <h3>ASPHALT</h3>
+                </a>
+                <p>2023</p>
+            </article>
+        </div>
+    </section>
+
+    <section class="artist-tracks">
+        <h2>Популярные композиции</h2>
+        <ol class="artist-tracks_list">
+            <li><span class="track-name">LIPSTICK</span><span class="track-album">HEAVY METAL</span></li>
+            <li><span class="track-name">Ринопластика (Surgery)</span><span class="track-album">HEAVY METAL 2</span></li>
+            <li><span class="track-name">Ice + Alabaster</span><span class="track-album">HEAVY METAL 2</span></li>
+            <li><span class="track-name">IMYA</span><span class="track-album">ASPHALT</span></li>
+            <li><span class="track-name">your love</span><span class="track-album">9mm</span></li>
+            <li><span class="track-name">Phoenix</span><span class="track-album">HEAVY METAL 2</span></li>
+        </ol>
+    </section>
+</main>
+
+<script src="../js/favorites.js"></script>
+</body>
+</html>

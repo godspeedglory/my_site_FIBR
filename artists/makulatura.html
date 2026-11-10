@@ -1,0 +1,116 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>макулатура — Музыкальный каталог</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/favorites.css">
+</head>
+<body class="artist-page">
+
+<header class="header">
+    <nav class="nav">
+        <ul class="nav-list">
+            <li><a href="../index.html">Главная</a></li>
+            <li><a href="../artists.html" aria-current="page">Исполнители</a></li>
+            <li><a href="../albums.html">Альбомы</a></li>
+            <li><a href="../favorites.html">Избранное</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main class="artist-main">
+    <section class="artist-hero">
+        <img class="artist-hero_img"
+             src="https://ponominalu.ru/media/library/original/b1-eb-b1ebe5019c5eb6ec57b092ded605a29c.jpeg"
+             alt="Группа макулатура">
+
+        <div class="artist-hero_info">
+            <p>МУЗЫКАЛЬНАЯ ГРУППА</p>
+            <h1>макулатура</h1>
+            <span>Альтернативный хип-хоп • Рэп</span>
+            <button class="favorite-heart artist-profile-favorite"
+                    type="button"
+                    data-favorite-type="artist"
+                    data-favorite-id="makulatura"
+                    data-favorite-name="макулатура">♡</button>
+        </div>
+    </section>
+
+    <section class="artist-biography">
+        <h2>Биография</h2>
+        <p>
+            макулатура — российская альтернативная
+            хип-хоп-группа, основанная в Кемерове
+            в начале 2000-х годов.
+        </p>
+        <p>
+            Основатели коллектива — Евгений Алёхин
+            и Константин Сперанский. Музыканты называют
+            своё творчество социально-бытовым рэпом.
+            Их тексты затрагивают повседневную жизнь,
+            общественные проблемы, одиночество
+            и внутренние переживания человека.
+        </p>
+        <p>
+            Музыка группы отличается литературным
+            стилем текстов, речитативом и сочетанием
+            хип-хопа с элементами альтернативного рока.
+            Среди известных альбомов — «пляж»,
+            «сеанс», «место» и «акрополь».
+        </p>
+    </section>
+
+    <section class="artist-gallery">
+        <h2>Фотографии</h2>
+        <div class="artist-gallery_row">
+            <img src="https://ponominalu.ru/media/library/original/b1-eb-b1ebe5019c5eb6ec57b092ded605a29c.jpeg"
+                 alt="Участники группы макулатура" loading="lazy">
+            <img src="https://avatars.yandex.net/get-music-content/2358262/0744a2c5.p.4313173/m1000x1000"
+                 alt="Участники группы макулатура" loading="lazy">
+        </div>
+    </section>
+
+    <section class="artist-albums">
+        <h2>Альбомы</h2>
+        <div class="artist-albums_row">
+
+            <article class="artist-album-card">
+                <a href="../album.html?id=plyazh">
+                    <img src="https://avatars.yandex.net/get-music-content/20189877/edad566a.a.3413222-5/m1000x1000"
+                         alt="пляж" loading="lazy">
+                    <h3>пляж</h3>
+                </a>
+                <p>2016</p>
+            </article>
+
+            <article class="artist-album-card">
+                <a href="../album.html?id=seans">
+                    <img src="https://images.genius.com/6a0d7456f9ed6ca65853eb4ce1d40a4f.1000x1000x1.png"
+                         alt="сеанс" loading="lazy">
+                    <h3>сеанс</h3>
+                </a>
+                <p>2017</p>
+            </article>
+        </div>
+    </section>
+
+    <section class="artist-tracks">
+        <h2>Популярные композиции</h2>
+        <ol class="artist-tracks_list">
+            <li><span class="track-name">нейт диаз</span></li>
+            <li><span class="track-name">самый отстойный день</span></li>
+            <li><span class="track-name">Канат</span></li>
+            <li><span class="track-name">запястья</span></li>
+            <li><span class="track-name">в огне</span></li>
+            <li><span class="track-name">пляж</span></li>
+            <li><span class="track-name">променад</span></li>
+        </ol>
+    </section>
+</main>
+
+<script src="../js/favorites.js"></script>
+</body>
+</html>

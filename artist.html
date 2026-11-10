@@ -1,0 +1,128 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Исполнители — Музыкальный каталог</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/favorites.css">
+</head>
+<body class="artists-page">
+
+<header class="header">
+    <nav class="nav">
+        <ul class="nav-list">
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="artists.html" aria-current="page">Исполнители</a></li>
+            <li><a href="albums.html">Альбомы</a></li>
+            <li><a href="favorites.html">Избранное</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main class="artists-main">
+    <h1>Исполнители</h1>
+
+    <div class="artists-search">
+        <input type="search"
+               id="artist-search"
+               placeholder="Поиск исполнителя..."
+               aria-label="Поиск исполнителя">
+    </div>
+
+    <section class="artists-grid">
+
+        <a href="artists/kai-angel.html"
+           class="artist-tile"
+           style="--album-bg: url('https://avatars.yandex.net/get-music-content/14854709/2ddaad79.a.38089920-1/m1000x1000')">
+            <img src="https://avatars.yandex.net/get-music-content/20164422/7997c3d6.p.16509384/m1000x1000"
+                 alt="Kai Angel">
+            <h2>Kai Angel</h2>
+        </a>
+
+        <a href="artists/9mice.html"
+           class="artist-tile"
+           style="--album-bg: url('https://avatars.yandex.net/get-music-content/15134515/7ddf8d50.a.38695104-1/m1000x1000')">
+            <img src="https://i.pinimg.com/736x/85/14/c3/8514c307a777951ffd571ac79f71d1ed.jpg"
+                 alt="9mice">
+            <h2>9mice</h2>
+        </a>
+
+        <a href="artists/makulatura.html"
+           class="artist-tile"
+           style="--album-bg: url('https://avatars.yandex.net/get-music-content/20189877/edad566a.a.3413222-5/m1000x1000')">
+            <img src="https://ponominalu.ru/media/library/original/b1-eb-b1ebe5019c5eb6ec57b092ded605a29c.jpeg"
+                 alt="макулатура">
+            <h2>макулатура</h2>
+        </a>
+
+        <a href="artists/girl-in-red.html"
+           class="artist-tile"
+           style="--album-bg: url('https://avatars.yandex.net/get-music-content/2399641/9bb25441.a.6226370-2/m1000x1000')">
+            <img src="https://avatars.yandex.net/get-music-content/4010467/d84c3493.p.5913514/m1000x1000"
+                 alt="girl in red">
+            <h2>girl in red</h2>
+        </a>
+
+        <article class="artist-tile"
+                 style="--album-bg: url('https://avatars.yandex.net/get-music-content/17659240/2ad7b781.a.3633571-2/m1000x1000')">
+            <img src="https://cdn.forbes.ru/forbes-static/new/2022/04/ph5-626a67c99574a.jpg"
+                 alt="PHARAOH">
+            <h2>PHARAOH</h2>
+        </article>
+
+        <article class="artist-tile"
+                 style="--album-bg: url('https://avatars.yandex.net/get-music-content/16485602/c79f657f.a.7248159-2/m1000x1000')">
+            <img src="https://images.genius.com/f496889ceaaca2badc7b73c4cdc935e3.1000x1000x1.jpg"
+                 alt="ЩЕНКИ">
+            <h2>ЩЕНКИ</h2>
+        </article>
+
+        <article class="artist-tile"
+                 style="--album-bg: url('https://avatars.yandex.net/get-music-content/10703962/14f17518.a.27073461-1/m1000x1000')">
+            <img src="https://i.pinimg.com/736x/b5/fd/e6/b5fde611a116fc30fbb7d062093ee684.jpg"
+                 alt="вышел покурить">
+            <h2>вышел покурить</h2>
+        </article>
+
+    </section>
+
+    <p class="artists-empty" id="artists-empty" hidden>
+        Исполнители не найдены
+    </p>
+</main>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const searchInput = document.getElementById("artist-search");
+    const artistCards = document.querySelectorAll(".artist-tile");
+    const emptyMessage = document.getElementById("artists-empty");
+
+    function searchArtists() {
+        const searchText = searchInput.value.trim().toLowerCase();
+        let visibleCount = 0;
+
+        artistCards.forEach(function (card) {
+            const artistName = card.querySelector("h2").textContent.toLowerCase();
+            const matches = artistName.includes(searchText);
+
+            card.hidden = !matches;
+
+            if (matches) {
+                visibleCount++;
+            }
+        });
+
+        emptyMessage.hidden = visibleCount > 0;
+    }
+
+    searchInput.addEventListener("input", searchArtists);
+    searchArtists();
+});
+</script>
+
+<script src="js/favorites.js"></script>
+</body>
+</html>

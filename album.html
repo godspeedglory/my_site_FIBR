@@ -1,0 +1,102 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Альбом — Музыкальный каталог</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/favorites.css">
+</head>
+<body class="album-page">
+
+<header class="header">
+    <nav class="nav">
+        <ul class="nav-list">
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="artists.html">Исполнители</a></li>
+            <li><a href="albums.html" aria-current="page">Альбомы</a></li>
+            <li><a href="favorites.html">Избранное</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main class="album-main">
+    <a href="albums.html" class="album-back">
+        ← Вернуться к альбомам
+    </a>
+
+    <section class="album-details">
+        <img id="album-cover" src="" alt="Обложка альбома">
+
+        <div class="album-info">
+            <p id="album-genre"></p>
+            <h1 id="album-title"></h1>
+            <h2 id="album-artist"></h2>
+            <p id="album-year"></p>
+
+            <button id="album-favorite" type="button">
+                ♡ Добавить в избранное
+            </button>
+        </div>
+    </section>
+
+    <section class="album-section">
+        <h2>Об альбоме</h2>
+        <p id="album-description"></p>
+    </section>
+
+    <section class="album-section">
+        <h2>Список композиций</h2>
+        <ol id="album-tracks"></ol>
+    </section>
+
+    <section class="album-section">
+        <h2>Отзывы и оценки</h2>
+
+        <p id="album-average-rating">
+            Пока нет оценок
+        </p>
+
+        <div id="album-reviews"></div>
+
+        <h3>Оставить отзыв</h3>
+
+        <form id="review-form">
+            <label for="review-name">Ваше имя</label>
+            <input
+                type="text"
+                id="review-name"
+                placeholder="Введите имя"
+                maxlength="40"
+                required>
+
+            <label for="review-rating">Оценка</label>
+            <select id="review-rating" required>
+                <option value="5">5 ★★★★★</option>
+                <option value="4">4 ★★★★</option>
+                <option value="3">3 ★★★</option>
+                <option value="2">2 ★★</option>
+                <option value="1">1 ★</option>
+            </select>
+
+            <label for="review-text">Ваш отзыв</label>
+            <textarea
+                id="review-text"
+                placeholder="Что вы думаете об альбоме?"
+                rows="5"
+                maxlength="1000"
+                required></textarea>
+
+            <button type="submit">
+                Опубликовать отзыв
+            </button>
+        </form>
+    </section>
+</main>
+
+<script src="js/album-data.js"></script>
+<script src="js/album.js"></script>
+</body>
+</html>

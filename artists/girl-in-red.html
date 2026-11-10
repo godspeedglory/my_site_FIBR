@@ -1,0 +1,124 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>girl in red — Музыкальный каталог</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/favorites.css">
+</head>
+<body class="artist-page">
+
+<header class="header">
+    <nav class="nav">
+        <ul class="nav-list">
+            <li><a href="../index.html">Главная</a></li>
+            <li><a href="../artists.html" aria-current="page">Исполнители</a></li>
+            <li><a href="../albums.html">Альбомы</a></li>
+            <li><a href="../favorites.html">Избранное</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main class="artist-main">
+    <section class="artist-hero">
+        <img class="artist-hero_img"
+             src="https://avatars.yandex.net/get-music-content/4010467/d84c3493.p.5913514/m1000x1000"
+             alt="girl in red">
+
+        <div class="artist-hero_info">
+            <p>ИСПОЛНИТЕЛЬ</p>
+            <h1>girl in red</h1>
+            <span>Инди-поп • Альтернативный рок</span>
+            <button class="favorite-heart artist-profile-favorite"
+                    type="button"
+                    data-favorite-type="artist"
+                    data-favorite-id="girl-in-red"
+                    data-favorite-name="girl in red">♡</button>
+        </div>
+    </section>
+
+    <section class="artist-biography">
+        <h2>Биография</h2>
+        <p>
+            girl in red — сценический псевдоним
+            норвежской певицы и автора песен
+            Мари Ульвен. Она родилась 16 февраля
+            1999 года в городе Хортен, Норвегия.
+        </p>
+        <p>
+            Свою музыкальную карьеру певица начала
+            с самостоятельной записи песен.
+            В 2017 году она представила композицию
+            i wanna be your girlfriend, которая
+            привлекла внимание слушателей в интернете.
+        </p>
+        <p>
+            В 2018 году вышла песня we fell in love
+            in october, ставшая одной из самых
+            узнаваемых работ исполнительницы.
+            Её творчество сочетает инди-поп,
+            гитарную музыку и личные тексты
+            о любви и переживаниях.
+        </p>
+        <p>
+            В 2021 году girl in red выпустила
+            дебютный студийный альбом
+            if i could make it go quiet.
+            Второй альбом I'M DOING IT AGAIN BABY!
+            вышел в 2024 году.
+        </p>
+    </section>
+
+    <section class="artist-gallery">
+        <h2>Фотографии</h2>
+        <div class="artist-gallery_row">
+            <img src="https://avatars.yandex.net/get-music-content/4010467/d84c3493.p.5913514/m1000x1000"
+                 alt="Портрет girl in red" loading="lazy">
+            <img src="https://avatars.yandex.net/get-music-content/2399641/9bb25441.a.6226370-2/m1000x1000"
+                 alt="Обложка релиза girl in red" loading="lazy">
+        </div>
+    </section>
+
+    <section class="artist-albums">
+        <h2>Альбомы</h2>
+        <div class="artist-albums_row">
+
+            <article class="artist-album-card">
+                <a href="../album.html?id=if-i-could-make-it-go-quiet">
+                    <img src="https://n.cdn.cdek.shopping/images/shopping/afBdP5KYDLTtzGsj.webp?v=1"
+                         alt="if i could make it go quiet" loading="lazy">
+                    <h3>if i could make it go quiet</h3>
+                </a>
+                <p>2021</p>
+            </article>
+
+            <article class="artist-album-card">
+                <a href="../album.html?id=im-doing-it-again-baby">
+                    <img src="https://n.cdn.cdek.shopping/images/shopping/UM3ZBavQjeQto4kS.webp?v=1"
+                         alt="I'M DOING IT AGAIN BABY!" loading="lazy">
+                    <h3>I'M DOING IT AGAIN BABY!</h3>
+                </a>
+                <p>2024</p>
+            </article>
+        </div>
+    </section>
+
+    <section class="artist-tracks">
+        <h2>Популярные композиции</h2>
+        <ol class="artist-tracks_list">
+            <li><span class="track-name">we fell in love in october</span></li>
+            <li><span class="track-name">i wanna be your girlfriend</span></li>
+            <li><span class="track-name">Serotonin</span></li>
+            <li><span class="track-name">girls</span></li>
+            <li><span class="track-name">Too Much</span></li>
+            <li><span class="track-name">You Need Me Now?</span></li>
+            <li><span class="track-name">I'll Call You Mine</span></li>
+        </ol>
+    </section>
+</main>
+
+<script src="../js/favorites.js"></script>
+</body>
+</html>

@@ -1,0 +1,644 @@
+
+/* Единая тёмно-фиолетовая тема сайта */
+
+:root {
+    color-scheme: dark;
+    --bg: #100e16;
+    --surface: #1b1724;
+    --surface-raised: #272032;
+    --border: #3c304b;
+    --text: #f7f2fc;
+    --muted: #b6a8c4;
+    --accent: #b58bfa;
+    --accent-strong: #8354cf;
+    --radius: 18px;
+    --shadow: 0 16px 44px rgba(0, 0, 0, 0.22);
+}
+
+/* Общие настройки */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body,
+body.artist-page,
+body.artists-page,
+body.albums-page,
+body.album-page,
+body.favorites-page {
+    margin: 0;
+    min-height: 100vh;
+    background:
+        radial-gradient(
+            ellipse 70% 32% at 50% -10%,
+            #322040 0%,
+            transparent 85%
+        ),
+        var(--bg);
+    color: var(--text);
+    font-family: Inter, system-ui, -apple-system,
+                 "Segoe UI", Arial, sans-serif;
+    line-height: 1.55;
+}
+
+img {
+    max-width: 100%;
+}
+
+a {
+    color: inherit;
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+}
+
+button {
+    touch-action: manipulation;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+}
+
+[hidden],
+.artist-tile[hidden],
+.catalog-card[hidden],
+.music-generator[hidden],
+.favorites-empty[hidden] {
+    display: none !important;
+}
+
+/* Шапка и навигация */
+
+.header,
+.artist-page .header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    padding: 0 5%;
+    background: rgba(18, 15, 25, 0.9);
+    border-bottom: 1px solid rgba(181, 139, 250, 0.15);
+    backdrop-filter: blur(16px);
+}
+
+.nav {
+    max-width: 1400px;
+    margin: auto;
+}
+
+.nav-list {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: clamp(12px, 3vw, 34px);
+    margin: 0;
+    padding: 18px 0;
+    list-style: none;
+}
+
+.nav-list a,
+.artist-page .nav-list a {
+    display: inline-block;
+    text-decoration: none;
+    color: var(--muted);
+    font-size: 15px;
+    font-weight: 600;
+    transition: color 0.2s;
+}
+
+.nav-list a:hover,
+.artist-page .nav-list a:hover,
+.nav-list a[aria-current="page"] {
+    color: var(--text);
+}
+
+/* Основные контейнеры */
+
+main:not(.artist-main):not(.artists-main):not(.albums-main):not(.album-main):not(.favorites-main) {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 38px 5% 80px;
+}
+
+.artist-main,
+.artists-main,
+.albums-main {
+    width: min(90%, 1400px);
+    margin: 44px auto 80px;
+}
+
+.album-main,
+.favorites-main {
+    width: min(100%, 1200px);
+    margin: auto;
+    padding: 44px 25px 80px;
+}
+
+/* Заголовки */
+
+h1,
+h2,
+h3,
+h4,
+p {
+    overflow-wrap: break-word;
+}
+
+h1 {
+    letter-spacing: -0.035em;
+}
+
+h2 {
+    letter-spacing: -0.02em;
+}
+
+.artists-main h1,
+.albums-heading h1,
+.favorites-main h1 {
+    font-size: clamp(30px, 4vw, 46px);
+    margin: 0 0 20px;
+}
+
+.artist-main h2,
+.favorites-main h2 {
+    font-size: clamp(23px, 2.5vw, 30px);
+}
+
+/* Главная страница */
+
+.popular-artist,
+.popular_alboms,
+.popular-albums {
+    margin-bottom: 46px;
+}
+
+.popular-artist_h2,
+.popular-albums_title {
+    font-size: clamp(24px, 2.7vw, 32px);
+    margin: 0 0 24px;
+}
+
+.popular_row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+}
+
+.popular-artist_cards {
+    width: clamp(130px, 14vw, 170px);
+    gap: 9px;
+}
+
+.popular-artist_img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border: 2px solid rgba(181, 139, 250, 0.15);
+    box-shadow: var(--shadow);
+}
+
+.popular-artist_name {
+    font-size: 15px;
+    margin: 4px 0 0;
+}
+
+.artist_song {
+    color: var(--muted);
+    margin: 0;
+}
+
+.popular-artist_cards a {
+    display: block;
+    width: 100%;
+}
+
+/* Кнопки генераторов */
+
+.music-tools {
+    gap: 18px;
+    margin: 34px 0;
+}
+
+.music-tools_btn {
+    min-height: 115px;
+    padding: 24px;
+    border: 1px solid #56426d;
+    background: linear-gradient(135deg, #30223f, #51336f);
+    box-shadow: var(--shadow);
+    font-size: clamp(16px, 2vw, 20px);
+}
+
+.music-tools_btn:hover {
+    box-shadow: 0 16px 42px rgba(118, 75, 178, 0.25);
+}
+
+/* Страница исполнителя */
+
+.artist-hero {
+    background: linear-gradient(120deg, #3c2853, #1d1728);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+}
+
+.artist-hero_info h1 {
+    font-size: clamp(34px, 5vw, 60px);
+}
+
+.artist-biography,
+.album-section,
+.music-generator {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+}
+
+.artist-biography p {
+    color: var(--muted);
+}
+
+.artist-gallery_row img,
+.artist-album-card img {
+    box-shadow: var(--shadow);
+}
+
+/* Альбомы исполнителя */
+
+.artist-albums_row {
+    gap: 22px;
+}
+
+.artist-album-card a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.artist-album-card img {
+    transition: transform 0.25s, filter 0.25s;
+}
+
+.artist-album-card a:hover img {
+    transform: translateY(-4px);
+    filter: brightness(1.1);
+}
+
+.artist-album-card h3 {
+    margin-bottom: 4px;
+}
+
+.artist-album-card p {
+    margin-top: 0;
+    color: var(--muted);
+}
+
+/* Популярные композиции */
+
+.artist-tracks_list li {
+    background: var(--surface);
+    border: 1px solid transparent;
+}
+
+.artist-tracks_list li:hover {
+    background: var(--surface-raised);
+    border-color: var(--border);
+}
+
+/* Каталог исполнителей */
+
+.artists-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.artist-tile {
+    aspect-ratio: 1 / 1;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+}
+
+.artist-tile h2 {
+    font-size: clamp(19px, 2.2vw, 27px);
+}
+
+/* Каталог альбомов и избранное */
+
+.albums-catalog,
+.favorites-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.catalog-card,
+.favorites-card,
+.generator-album-card {
+    position: relative;
+    min-width: 0;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    transition:
+        transform 0.22s,
+        border-color 0.22s,
+        background 0.22s;
+}
+
+.catalog-card:hover,
+.favorites-card:hover,
+.generator-album-card:hover {
+    transform: translateY(-5px);
+    background: var(--surface-raised);
+    border-color: #8064a6;
+}
+
+.catalog-card img,
+.favorites-card img,
+.generator-album-card img {
+    aspect-ratio: 1;
+    object-fit: cover;
+}
+
+.catalog-card h3 a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.catalog-card h3 a:hover {
+    color: var(--accent);
+}
+
+.catalog-card p,
+.favorites-card p,
+.generator-album-card p {
+    color: var(--muted);
+}
+
+/* Поиск, фильтры и формы */
+
+#album-search,
+#artist-search,
+.filter-group select,
+#review-form input,
+#review-form select,
+#review-form textarea {
+    background: #211b2d;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    color: var(--text);
+}
+
+#album-search:focus,
+#artist-search:focus,
+.filter-group select:focus,
+#review-form input:focus,
+#review-form textarea:focus {
+    border-color: var(--accent);
+}
+
+.genre-btn,
+.mood-buttons button {
+    background: #2b2238;
+    border: 1px solid #514063;
+    color: var(--text);
+}
+
+.genre-btn:hover,
+.mood-buttons button:hover,
+.genre-btn.active,
+.mood-buttons button.active {
+    background: #694598;
+    border-color: #a77bd9;
+    color: #fff;
+}
+
+/* Основные кнопки */
+
+#album-favorite,
+#review-form button,
+#reset-filters,
+.generator-action {
+    background: linear-gradient(135deg, #7650b1, #9565c6);
+    border: 0;
+    color: white;
+    border-radius: 12px;
+    font-weight: 600;
+    transition: filter 0.2s, transform 0.2s;
+}
+
+#album-favorite:hover,
+#review-form button:hover,
+#reset-filters:hover,
+.generator-action:hover {
+    filter: brightness(1.14);
+    transform: translateY(-2px);
+}
+
+#album-favorite.is-favorite {
+    background: #8b3f72;
+}
+
+/* Подробная страница альбома */
+
+.album-details {
+    align-items: center;
+}
+
+.album-info h1 {
+    font-size: clamp(30px, 4vw, 46px);
+}
+
+.album-section {
+    padding: clamp(20px, 3vw, 34px);
+}
+
+.review-card {
+    background: var(--surface-raised);
+    border: 1px solid var(--border);
+}
+
+/* Сердечки избранного */
+
+.favorite-heart {
+    width: 42px;
+    height: 42px;
+    background: rgba(16, 12, 24, 0.86);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    box-shadow: 0 5px 16px rgba(0, 0, 0, 0.2);
+}
+
+.favorite-heart.active {
+    color: #ff82b6;
+}
+
+.favorite-heart:hover {
+    background: #67418c;
+}
+
+/* Генераторы альбомов */
+
+.music-generator {
+    max-width: 1100px;
+    border-radius: 20px;
+}
+
+.generator-album-card {
+    width: min(100%, 250px);
+}
+
+.mood-results {
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+}
+
+.mood-results .generator-album-card {
+    width: 100%;
+}
+
+/* Адаптация для планшетов */
+
+@media (max-width: 1100px) {
+    .artists-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .albums-catalog,
+    .favorites-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 760px) {
+    .albums-catalog,
+    .favorites-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .artist-hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 28px;
+    }
+
+    .artist-gallery_row,
+    .artist-albums_row {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .album-details {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .album-details #album-cover {
+        width: min(100%, 340px);
+        height: auto;
+        aspect-ratio: 1;
+    }
+
+    .nav-list {
+        gap: 16px;
+    }
+
+    .nav-list a {
+        font-size: 14px;
+    }
+
+    .music-tools {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Адаптация для телефонов */
+
+@media (max-width: 520px) {
+    main:not(.artist-main):not(.artists-main):not(.albums-main):not(.album-main):not(.favorites-main) {
+        padding: 26px 5% 60px;
+    }
+
+    .artists-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .artist-tile {
+        aspect-ratio: 4 / 3;
+    }
+
+    .albums-catalog,
+    .favorites-grid {
+        gap: 12px;
+    }
+
+    .catalog-card,
+    .favorites-card {
+        padding: 10px;
+    }
+
+    .catalog-card h3,
+    .favorites-card h3 {
+        font-size: 15px;
+    }
+
+    .favorite-heart {
+        width: 36px;
+        height: 36px;
+        font-size: 24px;
+    }
+
+    .mood-results {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .music-generator {
+        margin: 24px 0;
+        padding: 20px;
+    }
+
+    .artist-gallery_row {
+        grid-template-columns: 1fr;
+    }
+
+    .album-main,
+    .favorites-main {
+        padding: 28px 5% 60px;
+    }
+}
+
+@media (max-width: 360px) {
+    .albums-catalog,
+    .favorites-grid,
+    .mood-results {
+        grid-template-columns: 1fr;
+    }
+
+    .nav-list {
+        gap: 10px;
+    }
+}
+
+/* Уменьшение анимаций при соответствующей настройке устройства */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition: none !important;
+        animation: none !important;
+    }
+}

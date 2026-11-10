@@ -1,0 +1,176 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Альбомы — Музыкальный каталог</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/favorites.css">
+    <script src="js/main.js" defer></script>
+</head>
+<body class="albums-page">
+
+<header class="header">
+    <nav class="nav">
+        <ul class="nav-list">
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="artists.html">Исполнители</a></li>
+            <li><a href="albums.html" aria-current="page">Альбомы</a></li>
+            <li><a href="favorites.html">Избранное</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main class="albums-main">
+    <section class="albums-heading">
+        <h1>Альбомы</h1>
+    </section>
+
+    <section class="albums-filters">
+        <input type="search"
+               id="album-search"
+               placeholder="Поиск альбома или исполнителя..."
+               aria-label="Поиск альбомов">
+
+        <div class="genre-buttons">
+            <button class="genre-btn active" data-genre="all">Все</button>
+            <button class="genre-btn" data-genre="rap">Рэп и трэп</button>
+            <button class="genre-btn" data-genre="alternative">Альтернативный хип-хоп</button>
+            <button class="genre-btn" data-genre="indie">Инди-поп</button>
+        </div>
+    </section>
+
+    <section class="albums-catalog" id="albums-catalog">
+
+        <article class="catalog-card" data-genre="rap" data-search="kai angel shh">
+            <img src="https://avatars.yandex.net/get-music-content/17649213/8c241ce2.a.43723917-1/m1000x1000"
+                 alt="Shh..." loading="lazy">
+            <h3><a href="album.html?id=shh">Shh...</a></h3>
+            <p>Kai Angel</p>
+            <span>2026</span>
+        </article>
+
+        <article class="catalog-card" data-genre="rap" data-search="kai angel damage">
+            <img src="https://avatars.yandex.net/get-music-content/14854709/2ddaad79.a.38089920-1/m1000x1000"
+                 alt="damage" loading="lazy">
+            <h3><a href="album.html?id=damage">damage</a></h3>
+            <p>Kai Angel</p>
+            <span>2025</span>
+        </article>
+
+        <article class="catalog-card" data-genre="rap" data-search="kai angel god system">
+            <img src="https://i.ytimg.com/vi/sDgsNc6nYZI/maxresdefault.jpg"
+                 alt="GOD SYSTEM" loading="lazy">
+            <h3><a href="album.html?id=god-system">GOD SYSTEM</a></h3>
+            <p>Kai Angel</p>
+            <span>2024</span>
+        </article>
+
+        <article class="catalog-card" data-genre="rap" data-search="kai angel angel may cry">
+            <img src="https://avatars.yandex.net/get-music-content/10092855/f4f8b518.a.26519993-1/m1000x1000"
+                 alt="ANGEL MAY CRY" loading="lazy">
+            <h3><a href="album.html?id=angel-may-cry">ANGEL MAY CRY</a></h3>
+            <p>Kai Angel</p>
+            <span>2023</span>
+        </article>
+
+        <article class="catalog-card" data-genre="rap" data-search="9mice 9mm">
+            <img src="https://avatars.yandex.net/get-music-content/15134515/7ddf8d50.a.38695104-1/m1000x1000"
+                 alt="9mm" loading="lazy">
+            <h3><a href="album.html?id=9mm">9mm</a></h3>
+            <p>9mice</p>
+            <span>2025</span>
+        </article>
+
+        <article class="catalog-card" data-genre="rap" data-search="9mice kai angel heavy metal 2">
+            <img src="https://avatars.yandex.net/get-music-content/14183125/b8b9eecf.a.33207179-1/m1000x1000"
+                 alt="HEAVY METAL 2" loading="lazy">
+            <h3><a href="album.html?id=heavy-metal-2">HEAVY METAL 2</a></h3>
+            <p>9mice, Kai Angel</p>
+            <span>2024</span>
+        </article>
+
+        <article class="catalog-card" data-genre="rap" data-search="9mice orpheus">
+            <img src="https://i.ytimg.com/vi/Nv738G8uDEI/maxresdefault.jpg"
+                 alt="ORPHEUS" loading="lazy">
+            <h3><a href="album.html?id=orpheus">ORPHEUS</a></h3>
+            <p>9mice</p>
+            <span>2023</span>
+        </article>
+
+        <article class="catalog-card" data-genre="rap" data-search="9mice asphalt">
+            <img src="https://avatars.yandex.net/get-music-content/9784575/a7a31a0f.a.25926224-1/m1000x1000"
+                 alt="ASPHALT" loading="lazy">
+            <h3><a href="album.html?id=asphalt">ASPHALT</a></h3>
+            <p>9mice</p>
+            <span>2023</span>
+        </article>
+
+        <article class="catalog-card" data-genre="alternative" data-search="макулатура пляж">
+            <img src="https://avatars.yandex.net/get-music-content/20189877/edad566a.a.3413222-5/m1000x1000"
+                 alt="пляж" loading="lazy">
+            <h3><a href="album.html?id=plyazh">пляж</a></h3>
+            <p>макулатура</p>
+            <span>2016</span>
+        </article>
+
+        <article class="catalog-card" data-genre="alternative" data-search="макулатура сеанс">
+            <img src="https://images.genius.com/6a0d7456f9ed6ca65853eb4ce1d40a4f.1000x1000x1.png"
+                 alt="сеанс" loading="lazy">
+            <h3><a href="album.html?id=seans">сеанс</a></h3>
+            <p>макулатура</p>
+            <span>2017</span>
+        </article>
+
+        <article class="catalog-card" data-genre="indie"
+                 data-search="girl in red if i could make it go quiet">
+            <img src="https://n.cdn.cdek.shopping/images/shopping/afBdP5KYDLTtzGsj.webp?v=1"
+                 alt="if i could make it go quiet" loading="lazy">
+            <h3>
+                <a href="album.html?id=if-i-could-make-it-go-quiet">
+                    if i could make it go quiet
+                </a>
+            </h3>
+            <p>girl in red</p>
+            <span>2021</span>
+        </article>
+
+        <article class="catalog-card" data-genre="indie"
+                 data-search="girl in red i'm doing it again baby">
+            <img src="https://n.cdn.cdek.shopping/images/shopping/UM3ZBavQjeQto4kS.webp?v=1"
+                 alt="I'M DOING IT AGAIN BABY!" loading="lazy">
+            <h3>
+                <a href="album.html?id=im-doing-it-again-baby">
+                    I'M DOING IT AGAIN BABY!
+                </a>
+            </h3>
+            <p>girl in red</p>
+            <span>2024</span>
+        </article>
+
+    </section>
+
+    <p class="albums-empty" id="albums-empty" hidden>
+        Альбомы не найдены
+    </p>
+</main>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll(".catalog-card").forEach(function (card) {
+        const link = card.querySelector("h3 a");
+        const image = card.querySelector("img");
+
+        if (link && image) {
+            image.addEventListener("click", function () {
+                window.location.href = link.href;
+            });
+        }
+    });
+});
+</script>
+<script src="js/favorites.js"></script>
+</body>
+</html>

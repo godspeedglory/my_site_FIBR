@@ -1,0 +1,231 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Музыкальный каталог">
+    <title>Музыка</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/favorites.css">
+
+    <script src="js/main.js" defer></script>
+</head>
+<body id="top">
+
+<header class="header">
+    <nav class="nav">
+        <ul class="nav-list">
+            <li><a href="index.html" aria-current="page">Главная</a></li>
+            <li><a href="artists.html">Исполнители</a></li>
+            <li><a href="albums.html">Альбомы</a></li>
+            <li><a href="favorites.html">Избранное</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <div class="popular-artist">
+        <h2 class="popular-artist_h2">Популярные артисты</h2>
+
+        <div class="popular_row">
+            <section class="popular-artist_cards">
+                <a href="artists/kai-angel.html">
+                    <img class="popular-artist_img"
+                         src="https://avatars.yandex.net/get-music-content/20164422/7997c3d6.p.16509384/m1000x1000"
+                         alt="Kai Angel">
+                </a>
+                <h4 class="popular-artist_name">Kai Angel</h4>
+            </section>
+
+            <section class="popular-artist_cards">
+                <a href="artists/9mice.html">
+                    <img class="popular-artist_img"
+                         src="https://i.pinimg.com/736x/82/5b/24/825b24add4701ca86d36913501e763d4.jpg"
+                         alt="9mice">
+                </a>
+                <h4 class="popular-artist_name">9mice</h4>
+            </section>
+
+            <section class="popular-artist_cards">
+                <a href="artists/makulatura.html">
+                    <img class="popular-artist_img"
+                         src="https://rockisfest.ru/upload/iblock/eb1/6pitl9deg122792oikmj00sd01p3wluq.jpg"
+                         alt="макулатура">
+                </a>
+                <h4 class="popular-artist_name">макулатура</h4>
+            </section>
+
+            <section class="popular-artist_cards">
+                <a href="artists/girl-in-red.html">
+                    <img class="popular-artist_img"
+                         src="https://avatars.yandex.net/get-music-content/4010467/d84c3493.p.5913514/m1000x1000"
+                         alt="girl in red">
+                </a>
+                <h4 class="popular-artist_name">girl in red</h4>
+            </section>
+
+            <section class="popular-artist_cards">
+                <img class="popular-artist_img"
+                     src="https://images.thevoicemag.ru/upload/img_cache/f0a/f0a0fdeaccf12ff0001e2eb04487e7b8_ce_3264x2165x0x0_cropped_1200x628.jpg"
+                     alt="PHARAOH">
+                <h4 class="popular-artist_name">PHARAOH</h4>
+            </section>
+
+            <section class="popular-artist_cards">
+                <img class="popular-artist_img"
+                     src="https://i.pinimg.com/736x/57/c7/59/57c7599cff38f6f8e0bb408fa0d8000c.jpg"
+                     alt="вышел покурить">
+                <h4 class="popular-artist_name">вышел покурить</h4>
+            </section>
+        </div>
+
+        <div class="music-tools">
+            <button class="music-tools_btn"
+                    id="random-album-btn" type="button">
+                <span>Генератор альбома</span>
+            </button>
+
+            <button class="music-tools_btn"
+                    id="mood-album-btn" type="button">
+                <span>Подбор по настроению</span>
+            </button>
+        </div>
+
+        <section class="music-generator" id="random-generator" hidden>
+            <h2>Случайный альбом</h2>
+            <p>Не знаешь, что послушать? Доверь выбор случайности!</p>
+
+            <div id="random-album-result"></div>
+
+            <button class="generator-action"
+                    id="generate-random" type="button">
+                Сгенерировать альбом
+            </button>
+        </section>
+
+        <section class="music-generator" id="mood-generator" hidden>
+            <h2>Подбор альбомов по настроению</h2>
+            <p>Выбери своё настроение, и мы подберём музыку.</p>
+
+            <div class="mood-buttons">
+                <button type="button" data-mood="happy">Весёлое</button>
+                <button type="button" data-mood="sad">Грустное</button>
+                <button type="button" data-mood="energetic">Энергичное</button>
+                <button type="button" data-mood="calm">Спокойное</button>
+                <button type="button" data-mood="dark">Мрачное</button>
+            </div>
+
+            <div class="mood-results" id="mood-results"></div>
+        </section>
+
+        <div class="popular_alboms">
+            <h2 class="popular-artist_h2">Музыкальные новинки</h2>
+
+            <div class="popular_row">
+                <section class="popular-artist_cards">
+                    <img class="popular-artist_img"
+                         src="images/kai-angel-shh.jpg" alt="Обложка Shh!">
+                    <h4 class="popular-artist_name">Kai Angel</h4>
+                    <h5 class="artist_song">Shh!</h5>
+                </section>
+
+                <section class="popular-artist_cards">
+                    <img class="popular-artist_img"
+                         src="images/9mice-net-tebya.jpg" alt="Обложка Нет Тебя">
+                    <h4 class="popular-artist_name">9mice, K</h4>
+                    <h5 class="artist_song">Нет Тебя</h5>
+                </section>
+
+                <section class="popular-artist_cards">
+                    <img class="popular-artist_img"
+                         src="images/makulatura-favorit.jpg" alt="Обложка Фаворит">
+                    <h4 class="popular-artist_name">макулатура</h4>
+                    <h5 class="artist_song">Фаворит</h5>
+                </section>
+
+                <section class="popular-artist_cards">
+                    <img class="popular-artist_img"
+                         src="images/girl-in-red-blue.jpg" alt="Обложка BLUE">
+                    <h4 class="popular-artist_name">girl in red</h4>
+                    <h5 class="artist_song">BLUE</h5>
+                </section>
+
+                <section class="popular-artist_cards">
+                    <img class="popular-artist_img"
+                         src="images/pharaoh-bentley.jpg" alt="Обложка Bentley + Full Clip">
+                    <h4 class="popular-artist_name">PHARAOH</h4>
+                    <h5 class="artist_song">Bentley + Full Clip</h5>
+                </section>
+
+
+                <section class="popular-artist_cards">
+                    <img class="popular-artist_img"
+                         src="images/vyshel-pokurit-zhdat.jpg" alt="Обложка ждать">
+                    <h4 class="popular-artist_name">вышел покурить</h4>
+                    <h5 class="artist_song">ждать</h5>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <div class="popular-albums">
+        <h2 class="popular-albums_title">Популярные альбомы</h2>
+
+        <div class="popular-albums_row">
+            <a class="album-card" href="album.html?id=plyazh">
+                <div class="album-card_bg"
+                     style="background-image: url('images/macular.webp');"></div>
+                <div class="album-card_content">
+                    <img class="album-card_img" src="images/macular.webp" alt="пляж">
+                    <div class="album-card_info">
+                        <h3>пляж</h3>
+                        <p>макулатура</p>
+                    </div>
+                </div>
+            </a>
+
+            <a class="album-card" href="album.html?id=damage">
+                <div class="album-card_bg"
+                     style="background-image: url('images/damage.webp');"></div>
+                <div class="album-card_content">
+                    <img class="album-card_img" src="images/damage.webp" alt="damage">
+                    <div class="album-card_info">
+                        <h3>damage</h3>
+                        <p>Kai Angel</p>
+                    </div>
+                </div>
+            </a>
+
+            <section class="album-card">
+                <div class="album-card_bg"
+                     style="background-image: url('images/phosphor.webp');"></div>
+                <div class="album-card_content">
+                    <img class="album-card_img" src="images/phosphor.webp" alt="PHOSPHOR">
+                    <div class="album-card_info">
+                        <h3>PHOSPHOR</h3>
+                        <p>PHARAOH</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="album-card">
+                <div class="album-card_bg"
+                     style="background-image: url('images/BADidea.jpg');"></div>
+                <div class="album-card_content">
+                    <img class="album-card_img" src="images/BADidea.jpg" alt="bad idea!">
+                    <div class="album-card_info">
+                        <h3>bad idea!</h3>
+                        <p>girl in red</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</main>
+
+<script src="js/album-data.js"></script>
+<script src="js/generators.js"></script>
+</body>
+</html>
