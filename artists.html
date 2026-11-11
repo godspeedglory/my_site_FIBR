@@ -4,25 +4,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Исполнители — Музыкальный каталог</title>
+    <meta name="description" content="Каталог музыкальных исполнителей MUSIC">
+    <title>Исполнители — MUSIC</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+          rel="stylesheet">
 
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/favorites.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
-<body class="artists-page">
+
+<body class="artists-page" id="top">
 
 <header class="header">
     <nav class="nav">
+
+        
+        <a href="index.html" class="navbar-brand music-logo">
+            <img src="images/download.svg" alt="Логотип MUSIC" class="music-logo__img">
+            <span class="music-logo__text">MUSIC<span class="music-logo__dot">.</span></span>
+        </a>
+
+
         <ul class="nav-list">
             <li><a href="index.html">Главная</a></li>
-            <li><a href="artists.html" aria-current="page">Исполнители</a></li>
+            <li>
+                <a href="artists.html" aria-current="page">
+                    Исполнители
+                </a>
+            </li>
             <li><a href="albums.html">Альбомы</a></li>
             <li><a href="favorites.html">Избранное</a></li>
+            <li><a href="about.html">О проекте</a></li>
         </ul>
+
     </nav>
 </header>
 
 <main class="artists-main">
+
     <h1>Исполнители</h1>
 
     <div class="artists-search">
@@ -37,62 +58,150 @@
         <a href="artists/kai-angel.html"
            class="artist-tile"
            style="--album-bg: url('https://avatars.yandex.net/get-music-content/14854709/2ddaad79.a.38089920-1/m1000x1000')">
+
             <img src="https://avatars.yandex.net/get-music-content/20164422/7997c3d6.p.16509384/m1000x1000"
                  alt="Kai Angel">
+
             <h2>Kai Angel</h2>
         </a>
 
         <a href="artists/9mice.html"
            class="artist-tile"
            style="--album-bg: url('https://avatars.yandex.net/get-music-content/15134515/7ddf8d50.a.38695104-1/m1000x1000')">
+
             <img src="https://i.pinimg.com/736x/85/14/c3/8514c307a777951ffd571ac79f71d1ed.jpg"
                  alt="9mice">
+
             <h2>9mice</h2>
         </a>
 
         <a href="artists/makulatura.html"
            class="artist-tile"
            style="--album-bg: url('https://avatars.yandex.net/get-music-content/20189877/edad566a.a.3413222-5/m1000x1000')">
+
             <img src="https://ponominalu.ru/media/library/original/b1-eb-b1ebe5019c5eb6ec57b092ded605a29c.jpeg"
                  alt="макулатура">
+
             <h2>макулатура</h2>
         </a>
 
         <a href="artists/girl-in-red.html"
            class="artist-tile"
            style="--album-bg: url('https://avatars.yandex.net/get-music-content/2399641/9bb25441.a.6226370-2/m1000x1000')">
+
             <img src="https://avatars.yandex.net/get-music-content/4010467/d84c3493.p.5913514/m1000x1000"
                  alt="girl in red">
+
             <h2>girl in red</h2>
         </a>
 
-        <article class="artist-tile"
+        <a href="artists/pharaoh.html" class="artist-tile"
                  style="--album-bg: url('https://avatars.yandex.net/get-music-content/17659240/2ad7b781.a.3633571-2/m1000x1000')">
+
             <img src="https://cdn.forbes.ru/forbes-static/new/2022/04/ph5-626a67c99574a.jpg"
                  alt="PHARAOH">
+
             <h2>PHARAOH</h2>
-        </article>
+        </a>
 
-        <article class="artist-tile"
-                 style="--album-bg: url('https://avatars.yandex.net/get-music-content/16485602/c79f657f.a.7248159-2/m1000x1000')">
+        
+        <a href="artists/shchenki.html"
+        class="artist-tile"
+        style="--album-bg: url('https://avatars.yandex.net/get-music-content/16485602/c79f657f.a.7248159-2/m1000x1000')">
+
             <img src="https://images.genius.com/f496889ceaaca2badc7b73c4cdc935e3.1000x1000x1.jpg"
-                 alt="ЩЕНКИ">
-            <h2>ЩЕНКИ</h2>
-        </article>
+                alt="ЩЕНКИ">
 
-        <article class="artist-tile"
-                 style="--album-bg: url('https://avatars.yandex.net/get-music-content/10703962/14f17518.a.27073461-1/m1000x1000')">
+            <h2>ЩЕНКИ</h2>
+
+        </a>
+
+
+        
+        <a href="artists/vyshel-pokurit.html"
+        class="artist-tile"
+        style="--album-bg: url('https://avatars.yandex.net/get-music-content/10703962/14f17518.a.27073461-1/m1000x1000')">
+
             <img src="https://i.pinimg.com/736x/b5/fd/e6/b5fde611a116fc30fbb7d062093ee684.jpg"
-                 alt="вышел покурить">
+                alt="вышел покурить">
+
             <h2>вышел покурить</h2>
-        </article>
+
+        </a>
+
 
     </section>
 
     <p class="artists-empty" id="artists-empty" hidden>
         Исполнители не найдены
     </p>
+
 </main>
+
+<footer class="site-footer">
+    <div class="footer-content">
+
+        <div class="footer-brand">
+            <a href="index.html" class="footer-logo footer-logo-with-image">
+                <img src="images/download.svg"
+                     alt=""
+                     class="footer-logo-img">
+                <span>MUSIC<span>.</span></span>
+            </a>
+            <p>Музыка, которую хочется сохранить.</p>
+        </div>
+
+        <nav class="footer-nav" aria-label="Навигация в футере">
+            <a href="index.html">Главная</a>
+            <a href="artists.html">Исполнители</a>
+            <a href="albums.html">Альбомы</a>
+            <a href="favorites.html">Избранное</a>
+            <a href="about.html">О проекте</a>
+        </nav>
+
+        <div class="footer-contacts">
+            <h3>Контакты</h3>
+
+            <a href="mailto:maamarkina@gmail.com" class="contact-item">
+                <i class="bi bi-envelope-fill contact-icon"></i>
+                <div class="contact-info">
+                    <span class="contact-title">Email</span>
+                    <span class="contact-value">maamarkina@gmail.com</span>
+                </div>
+            </a>
+
+            <a href="https://t.me/opiumxdreams"
+               class="contact-item"
+               target="_blank"
+               rel="noopener noreferrer">
+                <i class="bi bi-telegram contact-icon"></i>
+                <div class="contact-info">
+                    <span class="contact-title">Telegram</span>
+                    <span class="contact-value">@opiumxdreams</span>
+                </div>
+            </a>
+
+            <div class="contact-item">
+                <i class="bi bi-vk contact-icon"></i>
+                <div class="contact-info">
+                    <span class="contact-title">ВКонтакте</span>
+                    <span class="contact-value">Маркина Майя</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2026 MUSIC. Все права защищены.</p>
+    </div>
+</footer>
+
+
+
+<a href="#top" class="back-to-top" aria-label="Наверх">
+    ^
+</a>
 
 <script>
 document.addEventListener("DOMContentLoaded", function () {
@@ -124,5 +233,8 @@ document.addEventListener("DOMContentLoaded", function () {
 </script>
 
 <script src="js/favorites.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>

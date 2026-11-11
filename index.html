@@ -6,21 +6,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Музыкальный каталог">
     <title>Музыка</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet">
 
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/favorites.css">
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    
     <script src="js/main.js" defer></script>
 </head>
 <body id="top">
 
 <header class="header">
     <nav class="nav">
+    
+        <a href="index.html" class="navbar-brand music-logo">
+            <img src="images/download.svg" alt="Логотип MUSIC" class="music-logo__img">
+            <span class="music-logo__text">MUSIC<span class="music-logo__dot">.</span></span>
+        </a>
         <ul class="nav-list">
             <li><a href="index.html" aria-current="page">Главная</a></li>
             <li><a href="artists.html">Исполнители</a></li>
             <li><a href="albums.html">Альбомы</a></li>
             <li><a href="favorites.html">Избранное</a></li>
+            <li><a href="about.html">О проекте</a></li>
         </ul>
     </nav>
 </header>
@@ -66,19 +75,30 @@
                 <h4 class="popular-artist_name">girl in red</h4>
             </section>
 
+            
             <section class="popular-artist_cards">
-                <img class="popular-artist_img"
-                     src="https://images.thevoicemag.ru/upload/img_cache/f0a/f0a0fdeaccf12ff0001e2eb04487e7b8_ce_3264x2165x0x0_cropped_1200x628.jpg"
-                     alt="PHARAOH">
+                <a href="artists/pharaoh.html">
+                    <img class="popular-artist_img"
+                        src="https://images.thevoicemag.ru/upload/img_cache/f0a/f0a0fdeaccf12ff0001e2eb04487e7b8_ce_3264x2165x0x0_cropped_1200x628.jpg"
+                        alt="PHARAOH">
+                </a>
                 <h4 class="popular-artist_name">PHARAOH</h4>
             </section>
 
+
+            
             <section class="popular-artist_cards">
-                <img class="popular-artist_img"
-                     src="https://i.pinimg.com/736x/57/c7/59/57c7599cff38f6f8e0bb408fa0d8000c.jpg"
-                     alt="вышел покурить">
+
+                <a href="artists/vyshel-pokurit.html">
+                    <img class="popular-artist_img"
+                        src="https://i.pinimg.com/736x/57/c7/59/57c7599cff38f6f8e0bb408fa0d8000c.jpg"
+                        alt="вышел покурить">
+                </a>
+
                 <h4 class="popular-artist_name">вышел покурить</h4>
+
             </section>
+
         </div>
 
         <div class="music-tools">
@@ -227,5 +247,69 @@
 
 <script src="js/album-data.js"></script>
 <script src="js/generators.js"></script>
+
+
+<footer class="site-footer">
+    <div class="footer-content">
+
+        <div class="footer-brand">
+            <a href="index.html" class="footer-logo footer-logo-with-image">
+                <img src="images/download.svg"
+                     alt=""
+                     class="footer-logo-img">
+                <span>MUSIC<span>.</span></span>
+            </a>
+            <p>Музыка, которую хочется сохранить.</p>
+        </div>
+
+        <nav class="footer-nav" aria-label="Навигация в футере">
+            <a href="index.html">Главная</a>
+            <a href="artists.html">Исполнители</a>
+            <a href="albums.html">Альбомы</a>
+            <a href="favorites.html">Избранное</a>
+            <a href="about.html">О проекте</a>
+        </nav>
+
+        <div class="footer-contacts">
+            <h3>Контакты</h3>
+
+            <a href="mailto:maamarkina@gmail.com" class="contact-item">
+                <i class="bi bi-envelope-fill contact-icon"></i>
+                <div class="contact-info">
+                    <span class="contact-title">Email</span>
+                    <span class="contact-value">maamarkina@gmail.com</span>
+                </div>
+            </a>
+
+            <a href="https://t.me/opiumxdreams"
+               class="contact-item"
+               target="_blank"
+               rel="noopener noreferrer">
+                <i class="bi bi-telegram contact-icon"></i>
+                <div class="contact-info">
+                    <span class="contact-title">Telegram</span>
+                    <span class="contact-value">@opiumxdreams</span>
+                </div>
+            </a>
+
+            <div class="contact-item">
+                <i class="bi bi-vk contact-icon"></i>
+                <div class="contact-info">
+                    <span class="contact-title">ВКонтакте</span>
+                    <span class="contact-value">Маркина Майя</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2026 MUSIC. Все права защищены.</p>
+    </div>
+</footer>
+
+
+<a href="#top" class="back-to-top" aria-label="Наверх">^</a>
+
 </body>
 </html>

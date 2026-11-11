@@ -5,25 +5,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Kai Angel — биография, фотографии, альбомы и популярные композиции">
-    <title>Kai Angel — Музыкальный каталог</title>
+    <title>Kai Angel — MUSIC</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/favorites.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
-<body class="artist-page">
+
+<body class="artist-page" id="top">
 
 <header class="header">
     <nav class="nav">
+
+        <a href="../index.html" class="navbar-brand music-logo">
+            <img src="../images/download.svg" alt="Логотип MUSIC" class="music-logo__img">
+            <span class="music-logo__text">MUSIC<span class="music-logo__dot">.</span></span>
+        </a>
+
         <ul class="nav-list">
             <li><a href="../index.html">Главная</a></li>
-            <li><a href="../artists.html" aria-current="page">Исполнители</a></li>
+            <li>
+                <a href="../artists.html" aria-current="page">
+                    Исполнители
+                </a>
+            </li>
             <li><a href="../albums.html">Альбомы</a></li>
             <li><a href="../favorites.html">Избранное</a></li>
+            <li><a href="../about.html">О проекте</a></li>
         </ul>
+
     </nav>
 </header>
 
 <main class="artist-main">
+
+    <nav aria-label="Хлебные крошки">
+        <ol class="breadcrumb music-breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="../artists.html">Исполнители</a>
+            </li>
+            <li class="breadcrumb-item active" aria-current="page">
+                Kai Angel
+            </li>
+        </ol>
+    </nav>
+
+
     <section class="artist-hero">
+
         <img class="artist-hero_img"
              src="https://avatars.yandex.net/get-music-content/20164422/7997c3d6.p.16509384/m1000x1000"
              alt="Kai Angel">
@@ -32,21 +64,22 @@
             <p>ИСПОЛНИТЕЛЬ</p>
             <h1>Kai Angel</h1>
             <span>Хип-хоп • Рэп • Экспериментальная музыка</span>
-            <button class="favorite-heart artist-profile-favorite"
-                    type="button"
-                    data-favorite-type="artist"
-                    data-favorite-id="kai-angel"
-                    data-favorite-name="Kai Angel">♡</button>
         </div>
+
     </section>
 
+    <!-- Биография -->
+
     <section class="artist-biography">
+
         <h2>Биография</h2>
+
         <p>
             Kai Angel (настоящее имя — Дмитрий Ицков) —
             российский рэп-исполнитель, музыкальный
             продюсер и автор песен.
         </p>
+
         <p>
             До появления псевдонима Kai Angel музыкант
             выступал под именем zavet. Его раннее
@@ -54,6 +87,7 @@
             и экспериментами с различными музыкальными
             направлениями.
         </p>
+
         <p>
             Широкую известность исполнитель получил
             благодаря сотрудничеству с 9mice.
@@ -61,6 +95,7 @@
             VIPERR, получивший популярность среди
             поклонников современного рэпа.
         </p>
+
         <p>
             В сольном творчестве Kai Angel сочетает
             элементы трэпа, электронной музыки
@@ -68,28 +103,44 @@
             Среди его известных альбомов —
             ANGEL MAY CRY, GOD SYSTEM и damage.
         </p>
+
     </section>
+
+    <!-- Фотографии -->
 
     <section class="artist-gallery">
-        <h2>Фотографии</h2>
-        <div class="artist-gallery_row">
-            <img src="https://avatars.yandex.net/get-music-content/20164422/7997c3d6.p.16509384/m1000x1000"
-                 alt="Портрет Kai Angel" loading="lazy">
-            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Marilyn_Manson_and_kai_angel.jpg"
-                 alt="Kai Angel" loading="lazy">
-            <img src="https://i.ytimg.com/vi/lPeesqzdJ5A/maxresdefault.jpg?sqp=-oaymwEmCIAKENAF8quKqQMa8AEB-AH6CYAC0AWKAgwIABABGEIgTShlMA8=&amp;rs=AOn4CLCTTXgcd_0IQ-UlReBdAsmG5HIzeQ"
-                 alt="Фотография Kai Angel" loading="lazy">
-        </div>
-    </section>
 
+        <h2>Фотографии</h2>
+
+        <div class="artist-gallery_row">
+
+            <img src="https://avatars.yandex.net/get-music-content/20164422/7997c3d6.p.16509384/m1000x1000"
+                 alt="Портрет Kai Angel"
+                 loading="lazy">
+
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Marilyn_Manson_and_kai_angel.jpg"
+                 alt="Kai Angel"
+                 loading="lazy">
+
+            <img src="https://i.ytimg.com/vi/lPeesqzdJ5A/maxresdefault.jpg?sqp=-oaymwEmCIAKENAF8quKqQMa8AEB-AH6CYAC0AWKAgwIABABGEIgTShlMA8=&amp;rs=AOn4CLCTTXgcd_0IQ-UlReBdAsmG5HIzeQ"
+                 alt="Фотография Kai Angel"
+                 loading="lazy">
+
+        </div>
+
+    </section>
+    
     <section class="artist-albums">
         <h2>Альбомы</h2>
+
         <div class="artist-albums_row">
 
             <article class="artist-album-card">
                 <a href="../album.html?id=shh">
-                    <img src="https://avatars.yandex.net/get-music-content/17649213/8c241ce2.a.43723917-1/m1000x1000"
-                         alt="Shh..." loading="lazy">
+                    <img
+                        src="https://avatars.yandex.net/get-music-content/17649213/8c241ce2.a.43723917-1/m1000x1000"
+                        alt="Shh..."
+                        loading="lazy">
                     <h3>Shh...</h3>
                 </a>
                 <p>2026</p>
@@ -97,8 +148,10 @@
 
             <article class="artist-album-card">
                 <a href="../album.html?id=damage">
-                    <img src="https://avatars.yandex.net/get-music-content/14854709/2ddaad79.a.38089920-1/m1000x1000"
-                         alt="damage" loading="lazy">
+                    <img
+                        src="https://avatars.yandex.net/get-music-content/14854709/2ddaad79.a.38089920-1/m1000x1000"
+                        alt="damage"
+                        loading="lazy">
                     <h3>damage</h3>
                 </a>
                 <p>2025</p>
@@ -106,8 +159,10 @@
 
             <article class="artist-album-card">
                 <a href="../album.html?id=god-system">
-                    <img src="https://i.ytimg.com/vi/sDgsNc6nYZI/maxresdefault.jpg"
-                         alt="GOD SYSTEM" loading="lazy">
+                    <img
+                        src="https://i.ytimg.com/vi/sDgsNc6nYZI/maxresdefault.jpg"
+                        alt="GOD SYSTEM"
+                        loading="lazy">
                     <h3>GOD SYSTEM</h3>
                 </a>
                 <p>2024</p>
@@ -115,29 +170,136 @@
 
             <article class="artist-album-card">
                 <a href="../album.html?id=angel-may-cry">
-                    <img src="https://avatars.yandex.net/get-music-content/10092855/f4f8b518.a.26519993-1/m1000x1000"
-                         alt="ANGEL MAY CRY" loading="lazy">
+                    <img
+                        src="https://avatars.yandex.net/get-music-content/10092855/f4f8b518.a.26519993-1/m1000x1000"
+                        alt="ANGEL MAY CRY"
+                        loading="lazy">
                     <h3>ANGEL MAY CRY</h3>
                 </a>
                 <p>2023</p>
             </article>
+
         </div>
     </section>
 
+
+    <!-- Популярные композиции -->
+
     <section class="artist-tracks">
+
         <h2>Популярные композиции</h2>
+
         <ol class="artist-tracks_list">
-            <li><span class="track-name">andy warhol</span><span class="track-album">Shh...</span></li>
-            <li><span class="track-name">BABYLON</span><span class="track-album">Shh...</span></li>
-            <li><span class="track-name">LIPSTICK</span><span class="track-album">HEAVY METAL</span></li>
-            <li><span class="track-name">JUMP!</span><span class="track-album">ANGEL MAY CRY</span></li>
-            <li><span class="track-name">madam</span><span class="track-album">damage</span></li>
-            <li><span class="track-name">PARIS 2008</span><span class="track-album">ANGEL MAY CRY</span></li>
-            <li><span class="track-name">evil icon baby</span><span class="track-album">Shh...</span></li>
+
+            <li>
+                <span class="track-name">andy warhol</span>
+                <span class="track-album">Shh...</span>
+            </li>
+
+            <li>
+                <span class="track-name">BABYLON</span>
+                <span class="track-album">Shh...</span>
+            </li>
+
+            <li>
+                <span class="track-name">LIPSTICK</span>
+                <span class="track-album">HEAVY METAL</span>
+            </li>
+
+            <li>
+                <span class="track-name">JUMP!</span>
+                <span class="track-album">ANGEL MAY CRY</span>
+            </li>
+
+            <li>
+                <span class="track-name">madam</span>
+                <span class="track-album">damage</span>
+            </li>
+
+            <li>
+                <span class="track-name">PARIS 2008</span>
+                <span class="track-album">ANGEL MAY CRY</span>
+            </li>
+
+            <li>
+                <span class="track-name">evil icon baby</span>
+                <span class="track-album">Shh...</span>
+            </li>
+
         </ol>
+
     </section>
+
 </main>
 
-<script src="../js/favorites.js"></script>
+<footer class="site-footer">
+    <div class="footer-content">
+
+        <div class="footer-brand">
+            <a href="index.html" class="footer-logo footer-logo-with-image">
+                <img src="images/download.svg"
+                     alt=""
+                     class="footer-logo-img">
+                <span>MUSIC<span>.</span></span>
+            </a>
+            <p>Музыка, которую хочется сохранить.</p>
+        </div>
+
+        <nav class="footer-nav" aria-label="Навигация в футере">
+            <a href="index.html">Главная</a>
+            <a href="artists.html">Исполнители</a>
+            <a href="albums.html">Альбомы</a>
+            <a href="favorites.html">Избранное</a>
+            <a href="about.html">О проекте</a>
+        </nav>
+
+        <div class="footer-contacts">
+            <h3>Контакты</h3>
+
+            <a href="mailto:maamarkina@gmail.com" class="contact-item">
+                <i class="bi bi-envelope-fill contact-icon"></i>
+                <div class="contact-info">
+                    <span class="contact-title">Email</span>
+                    <span class="contact-value">maamarkina@gmail.com</span>
+                </div>
+            </a>
+
+            <a href="https://t.me/opiumxdreams"
+               class="contact-item"
+               target="_blank"
+               rel="noopener noreferrer">
+                <i class="bi bi-telegram contact-icon"></i>
+                <div class="contact-info">
+                    <span class="contact-title">Telegram</span>
+                    <span class="contact-value">@opiumxdreams</span>
+                </div>
+            </a>
+
+            <div class="contact-item">
+                <i class="bi bi-vk contact-icon"></i>
+                <div class="contact-info">
+                    <span class="contact-title">ВКонтакте</span>
+                    <span class="contact-value">Маркина Майя</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2026 MUSIC. Все права защищены.</p>
+    </div>
+</footer>
+
+
+
+<a href="#top"
+   class="back-to-top"
+   aria-label="Наверх">
+    ^
+</a>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>

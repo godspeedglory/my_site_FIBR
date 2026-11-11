@@ -4,55 +4,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Альбом — Музыкальный каталог</title>
+    <meta name="description" content="Информация о музыкальном альбоме, композиции, отзывы и оценки — MUSIC">
+    <title>Альбом — MUSIC</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+          rel="stylesheet">
 
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/favorites.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <script src="js/album-data.js" defer></script>
+    <script src="js/album.js" defer></script>
 </head>
-<body class="album-page">
+
+<body class="album-page" id="top">
 
 <header class="header">
     <nav class="nav">
+
+        
+        <a href="index.html" class="navbar-brand music-logo">
+            <img src="images/download.svg" alt="Логотип MUSIC" class="music-logo__img">
+            <span class="music-logo__text">MUSIC<span class="music-logo__dot">.</span></span>
+        </a>
+
+
         <ul class="nav-list">
             <li><a href="index.html">Главная</a></li>
             <li><a href="artists.html">Исполнители</a></li>
-            <li><a href="albums.html" aria-current="page">Альбомы</a></li>
+            <li>
+                <a href="albums.html" aria-current="page">
+                    Альбомы
+                </a>
+            </li>
             <li><a href="favorites.html">Избранное</a></li>
+            <li><a href="about.html">О проекте</a></li>
         </ul>
+
     </nav>
 </header>
 
 <main class="album-main">
+
     <a href="albums.html" class="album-back">
         ← Вернуться к альбомам
     </a>
 
     <section class="album-details">
-        <img id="album-cover" src="" alt="Обложка альбома">
+
+        <img id="album-cover"
+             src=""
+             alt="Обложка альбома">
 
         <div class="album-info">
+
             <p id="album-genre"></p>
+
             <h1 id="album-title"></h1>
+
             <h2 id="album-artist"></h2>
+
             <p id="album-year"></p>
 
             <button id="album-favorite" type="button">
                 ♡ Добавить в избранное
             </button>
+
         </div>
+
     </section>
 
     <section class="album-section">
+
         <h2>Об альбоме</h2>
+
         <p id="album-description"></p>
+
     </section>
 
     <section class="album-section">
+
         <h2>Список композиций</h2>
+
         <ol id="album-tracks"></ol>
+
     </section>
 
     <section class="album-section">
+
         <h2>Отзывы и оценки</h2>
 
         <p id="album-average-rating">
@@ -64,15 +104,21 @@
         <h3>Оставить отзыв</h3>
 
         <form id="review-form">
-            <label for="review-name">Ваше имя</label>
-            <input
-                type="text"
-                id="review-name"
-                placeholder="Введите имя"
-                maxlength="40"
-                required>
 
-            <label for="review-rating">Оценка</label>
+            <label for="review-name">
+                Ваше имя
+            </label>
+
+            <input type="text"
+                   id="review-name"
+                   placeholder="Введите имя"
+                   maxlength="40"
+                   required>
+
+            <label for="review-rating">
+                Оценка
+            </label>
+
             <select id="review-rating" required>
                 <option value="5">5 ★★★★★</option>
                 <option value="4">4 ★★★★</option>
@@ -81,22 +127,94 @@
                 <option value="1">1 ★</option>
             </select>
 
-            <label for="review-text">Ваш отзыв</label>
-            <textarea
-                id="review-text"
-                placeholder="Что вы думаете об альбоме?"
-                rows="5"
-                maxlength="1000"
-                required></textarea>
+            <label for="review-text">
+                Ваш отзыв
+            </label>
+
+            <textarea id="review-text"
+                      placeholder="Что вы думаете об альбоме?"
+                      rows="5"
+                      maxlength="1000"
+                      required></textarea>
 
             <button type="submit">
                 Опубликовать отзыв
             </button>
+
         </form>
+
     </section>
+
 </main>
 
-<script src="js/album-data.js"></script>
-<script src="js/album.js"></script>
+<footer class="site-footer">
+    <div class="footer-content">
+
+        <div class="footer-brand">
+            <a href="index.html" class="footer-logo footer-logo-with-image">
+                <img src="images/download.svg"
+                     alt=""
+                     class="footer-logo-img">
+                <span>MUSIC<span>.</span></span>
+            </a>
+            <p>Музыка, которую хочется сохранить.</p>
+        </div>
+
+        <nav class="footer-nav" aria-label="Навигация в футере">
+            <a href="index.html">Главная</a>
+            <a href="artists.html">Исполнители</a>
+            <a href="albums.html">Альбомы</a>
+            <a href="favorites.html">Избранное</a>
+            <a href="about.html">О проекте</a>
+        </nav>
+
+        <div class="footer-contacts">
+            <h3>Контакты</h3>
+
+            <a href="mailto:maamarkina@gmail.com" class="contact-item">
+                <i class="bi bi-envelope-fill contact-icon"></i>
+                <div class="contact-info">
+                    <span class="contact-title">Email</span>
+                    <span class="contact-value">maamarkina@gmail.com</span>
+                </div>
+            </a>
+
+            <a href="https://t.me/opiumxdreams"
+               class="contact-item"
+               target="_blank"
+               rel="noopener noreferrer">
+                <i class="bi bi-telegram contact-icon"></i>
+                <div class="contact-info">
+                    <span class="contact-title">Telegram</span>
+                    <span class="contact-value">@opiumxdreams</span>
+                </div>
+            </a>
+
+            <div class="contact-item">
+                <i class="bi bi-vk contact-icon"></i>
+                <div class="contact-info">
+                    <span class="contact-title">ВКонтакте</span>
+                    <span class="contact-value">Маркина Майя</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2026 MUSIC. Все права защищены.</p>
+    </div>
+</footer>
+
+
+
+<a href="#top"
+   class="back-to-top"
+   aria-label="Наверх">
+    ^
+</a>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>
