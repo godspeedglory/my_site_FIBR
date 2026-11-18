@@ -25,32 +25,40 @@ document.addEventListener("DOMContentLoaded", function () {
         "pharaoh": {
             name: "PHARAOH",
             image: "https://cdn.forbes.ru/forbes-static/new/2022/04/ph5-626a67c99574a.jpg",
-            url: null
+            url: "artists/pharaoh.html"
         },
         "щенки": {
             name: "ЩЕНКИ",
             image: "https://images.genius.com/f496889ceaaca2badc7b73c4cdc935e3.1000x1000x1.jpg",
-            url: null
+            url: "artists/shchenki.html"
         },
         "вышел покурить": {
             name: "вышел покурить",
             image: "https://i.pinimg.com/736x/b5/fd/e6/b5fde611a116fc30fbb7d062093ee684.jpg",
-            url: null
+            url: "artists/vyshel-pokurit.html"
         }
     };
 
-    function createCard(type, id, item) {
+    const albumItems = Object.fromEntries(
+        Object.entries(albumsData).map(([id, album]) => [
+            id,
+            {
+                ...album,
+                url: "album.html?id=" + encodeURIComponent(id)
+            }
+        ])
+    );
 
+    function notify(message) {
+        window.MusicFeatures?.toast?.(message);
+    }
+
+    function createCard(type, id, item) {
         const card = document.createElement("article");
         card.className = "favorites-card";
 
-        const link = document.createElement(
-            item.url ? "a" : "div"
-        );
-
-        if (item.url) {
-            link.href = item.url;
-        }
+        const link = document.createElement("a");
+        link.href = item.url;
 
         const image = document.createElement("img");
         image.src = item.image || item.cover;
@@ -61,7 +69,6 @@ document.addEventListener("DOMContentLoaded", function () {
         title.textContent = item.name || item.title;
 
         const description = document.createElement("p");
-
         description.textContent = type === "album"
             ? item.artist + " · " + item.year
             : "Исполнитель";
@@ -80,61 +87,73 @@ document.addEventListener("DOMContentLoaded", function () {
 
         button.addEventListener("click", function () {
             Favorites.toggle(type, id);
-            renderFavorites();
+            notify("Удалено из избранного");
         });
 
         card.appendChild(button);
-
         return card;
     }
 
-    function renderSection(type, data, containerId, emptyId) {
+    function renderSection(type, data, gridId, emptyId, countId) {
+        const grid = document.getElementById(gridId);
+        const empty = document.getElementById(emptyId);
+        const counter = document.getElementById(countId);
 
-        const container = document.getElementById(containerId);
-        const emptyMessage = document.getElementById(emptyId);
+        const selected = Favorites.get(type).filter(id => data[id]);
 
-        container.replaceChildren();
+        grid.replaceChildren(
+            ...selected.map(id => createCard(type, id, data[id]))
+        );
 
-        const selected = Favorites.get(type)
-            .filter(id => data[id]);
-
-        selected.forEach(function (id) {
-
-            const card = createCard(type, id, data[id]);
-
-            container.appendChild(card);
-        });
-
-        emptyMessage.hidden = selected.length > 0;
+        empty.hidden = selected.length > 0;
+        if (counter) counter.textContent = selected.length;
     }
 
     function renderFavorites() {
-
         renderSection(
-            "artist",
-            artists,
-            "favorite-artists",
-            "empty-artists"
+            "artist", artists,
+            "favorite-artists", "empty-artists",
+            "favorite-artists-count"
         );
 
-        const albums = {};
-
-        Object.entries(albumsData).forEach(function ([id, album]) {
-            albums[id] = {
-                ...album,
-                url: "album.html?id=" + encodeURIComponent(id)
-            };
-        });
-
         renderSection(
-            "album",
-            albums,
-            "favorite-albums",
-            "empty-albums"
+            "album", albumItems,
+            "favorite-albums", "empty-albums",
+            "favorite-albums-count"
         );
+
+        const clearButton = document.getElementById(
+            "clear-all-favorites"
+        );
+
+        if (clearButton) {
+            clearButton.disabled =
+                Favorites.get("artist").length === 0 &&
+                Favorites.get("album").length === 0;
+        }
     }
 
-    renderFavorites();
+    document.getElementById("clear-all-favorites")
+        ?.addEventListener("click", function () {
+
+            const confirmed = window.confirm(
+                "Удалить всех исполнителей и альбомы из избранного?"
+            );
+
+            if (!confirmed) return;
+
+            Favorites.clear("artist");
+            Favorites.clear("album");
+
+            notify("Избранное очищено");
+        });
+
+    window.addEventListener(
+        "music:favorites-changed",
+        renderFavorites
+    );
 
     window.addEventListener("storage", renderFavorites);
+
+    renderFavorites();
 });

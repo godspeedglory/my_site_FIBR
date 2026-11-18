@@ -13,10 +13,12 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/favorites.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-
+    <script src="js/music-features.js" defer></script>
+    <script src="js/notifications.js" defer></script>
     <script src="js/album-data.js" defer></script>
     <script src="js/favorites.js" defer></script>
     <script src="js/favorites-page.js" defer></script>
+
 </head>
 
 <body class="favorites-page" id="top">
@@ -46,35 +48,57 @@
     </nav>
 </header>
 
+
 <main class="favorites-main">
 
-    <h1>Избранное</h1>
-
-    <section>
-        <h2>Исполнители</h2>
-
-        <div class="favorites-grid"
-             id="favorite-artists">
+    <div class="favorites-heading">
+        <div>
+            <h1>Избранное</h1>
+            <p>Исполнители и альбомы, которые ты сохранила.</p>
         </div>
 
-        <p class="favorites-empty" id="empty-artists">
+        <button type="button"
+                class="favorites-clear-btn"
+                id="clear-all-favorites">
+            <i class="bi bi-trash3"></i>
+            Очистить избранное
+        </button>
+    </div>
+
+    <section class="favorites-section">
+        <h2>
+            Исполнители
+            <span class="favorites-counter"
+                  id="favorite-artists-count">0</span>
+        </h2>
+
+        <div class="favorites-grid"
+             id="favorite-artists"></div>
+
+        <p class="favorites-empty"
+           id="empty-artists">
             Пока нет избранных исполнителей.
         </p>
     </section>
 
-    <section>
-        <h2>Альбомы</h2>
+    <section class="favorites-section">
+        <h2>
+            Альбомы
+            <span class="favorites-counter"
+                  id="favorite-albums-count">0</span>
+        </h2>
 
         <div class="favorites-grid"
-             id="favorite-albums">
-        </div>
+             id="favorite-albums"></div>
 
-        <p class="favorites-empty" id="empty-albums">
+        <p class="favorites-empty"
+           id="empty-albums">
             Пока нет избранных альбомов.
         </p>
     </section>
 
 </main>
+
 
 <footer class="site-footer">
     <div class="footer-content">

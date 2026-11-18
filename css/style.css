@@ -2260,3 +2260,301 @@ html {
         flex-direction: column;
     }
 }
+
+/* Новые функции MUSIC */
+
+.music-extra-section {
+    margin: 55px 0;
+}
+
+.music-extra-section h2 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.music-extra-section > p {
+    color: #a1a1a1;
+    margin-bottom: 25px;
+}
+
+.music-history-grid {
+    display: grid;
+    grid-template-columns: repeat(
+        auto-fill,
+        minmax(170px, 1fr)
+    );
+    gap: 20px;
+}
+
+.music-history-card {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 14px;
+    background: #1c1c1c;
+    border: 1px solid #303030;
+    border-radius: 16px;
+    color: #f5f5f5;
+    text-decoration: none;
+    transition: 0.25s ease;
+}
+
+.music-history-card:hover {
+    transform: translateY(-4px);
+    border-color: #666;
+    color: #fff;
+}
+
+.music-history-card img {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.music-history-card strong {
+    font-size: 16px;
+}
+
+.music-history-card span {
+    color: #a1a1a1;
+    font-size: 14px;
+}
+
+.music-fact-card {
+    padding: 30px;
+    background: #1c1c1c;
+    border: 1px solid #303030;
+    border-radius: 18px;
+}
+
+.music-fact-card p {
+    color: #f5f5f5;
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+.music-extra-button {
+    padding: 12px 22px;
+    background: #fff;
+    border: none;
+    border-radius: 10px;
+    color: #101010;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.music-extra-button:hover {
+    background: #dedede;
+}
+
+/* Всплывающие уведомления */
+
+.music-toast-container {
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: calc(100vw - 40px);
+}
+
+.music-toast {
+    padding: 15px 22px;
+    background: #252525;
+    border: 1px solid #505050;
+    border-radius: 12px;
+    color: white;
+    box-shadow: 0 10px 35px rgba(0,0,0,.35);
+    animation: musicToastIn .25s ease;
+}
+
+.music-toast.is-leaving {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: .25s ease;
+}
+
+@keyframes musicToastIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 600px) {
+    .music-history-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .music-fact-card {
+        padding: 20px;
+    }
+}
+.music-toast-container {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 99999;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    pointer-events: none;
+}
+
+.music-toast {
+    padding: 16px 24px;
+    background: #252525;
+    border: 1px solid #555;
+    border-radius: 12px;
+    color: #fff;
+    font-size: 14px;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.4);
+    animation: toastAppear 0.25s ease;
+}
+
+.music-toast.is-leaving {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: 0.25s ease;
+}
+
+@keyframes toastAppear {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Кнопка "Показать ещё" */
+
+.catalog-card[hidden],
+.artist-tile[hidden],
+.albums-empty[hidden],
+.artists-empty[hidden],
+.music-show-more-wrapper[hidden],
+.music-show-more-btn[hidden] {
+    display: none !important;
+}
+
+.music-show-more-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    margin: 38px 0 45px;
+}
+
+.music-show-more-btn {
+    min-width: 210px;
+    padding: 14px 28px;
+    background: #242424;
+    border: 1px solid #555;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s ease,
+                border-color 0.2s ease,
+                transform 0.2s ease;
+}
+
+.music-show-more-btn:hover {
+    background: #363636;
+    border-color: #888;
+    transform: translateY(-2px);
+}
+
+.music-show-more-btn:active {
+    transform: translateY(0);
+}
+
+.music-show-more-counter {
+    margin: 0;
+    color: #999;
+    font-size: 13px;
+}
+
+@media (max-width: 600px) {
+    .music-show-more-wrapper {
+        margin: 28px 0 35px;
+    }
+
+    .music-show-more-btn {
+        width: 100%;
+        max-width: 320px;
+    }
+}
+
+/* Недавно просмотренные альбомы */
+
+.music-history-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+    margin-top: 24px;
+}
+
+.music-history-card {
+    display: block;
+    padding: 16px;
+    background: #1d1d1d;
+    border: 1px solid #333;
+    border-radius: 12px;
+    color: #fff;
+    text-decoration: none;
+    transition: transform 0.2s, border-color 0.2s;
+}
+
+.music-history-card:hover {
+    transform: translateY(-4px);
+    border-color: #777;
+}
+
+.music-history-card img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 12px;
+}
+
+.music-history-card h3 {
+    margin: 0 0 5px;
+    font-size: 17px;
+    color: #fff;
+}
+
+.music-history-card p {
+    margin: 0;
+    color: #aaa;
+    font-size: 14px;
+}
+
+#music-history-section[hidden] {
+    display: none !important;
+}
+
+@media (max-width: 700px) {
+    .music-history-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+}
